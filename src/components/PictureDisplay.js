@@ -25,16 +25,25 @@ const feathers = [
 ];
 
 function PictureDisplay ({ size, featherCount, featherColors }) {
+  const [sizeClass, setSizeClass] = useState('')
   // TODO: Wrap in useEffect
 
   // useEffect(() => {
   //   console.log('PictureDisplay', size, featherCount, featherColors);
   // }, [size, featherCount, featherColors]);
-
+  
   useEffect(() => {
+    let cname
     console.log('PictureDisplay size', size);
+    if(size==='s'){cname='small'}
+    if(size==='m'){cname='medium'}
+    if(size==='l'){cname='large'}
+    if(size==='xl'){cname='xlarge'}
+    setSizeClass(cname)
   }, [size]);
-
+  
+  console.log('cname',sizeClass);
+  
   useEffect(() => {
     console.log('PictureDisplay feather count', featherCount);
   }, [featherCount]);
@@ -52,7 +61,8 @@ function PictureDisplay ({ size, featherCount, featherColors }) {
   }
 
   return (
-    <div className={`image-area medium`}>
+    // <div className={`image-area ${sizeClass}`}>
+    <div className={`image-area ${sizeClass}`}>
       {colors.map((c, i) =>
         <img  
           key={feathers[i]} 
