@@ -5,7 +5,7 @@ configure the display of a turkey drawing for kids.
 
 The goal is to practice different use cases for the `useEffect` hook in *React*
 to improve your understanding and build confidence in your skills. It covers:
-
+ 
 * Debugging prop changes
 * Debugging state changes
 * Catching state changes to generate another state value programmatically
